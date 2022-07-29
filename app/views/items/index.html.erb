@@ -1,19 +1,5 @@
 <h1 align="center">List of all recepies</h1>
-<%@items.each do |item|%>
-<div class="row">
-<div class="col-md-2">
-<section class=center>
-
-</section>
+<div align="center">
+<%= will_paginate%>
 </div>
-
-<div class="col-md-8 well"> 
-<h4><%= link_to item.name, item_path(item) %></h4>
-    <p><%= item.description%></p>
-    </div>
-
-
-    
-    </div>
-
-<%end%>
+<%= render 'item', obj: @items %>

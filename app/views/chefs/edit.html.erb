@@ -1,0 +1,14 @@
+<h1 align="center">Edit A Chef</h1>
+
+
+<% if @chef.errors.any? %>
+            
+  <ul>
+      <li>hiii errors hai</li>
+      <%@chef.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+  </ul>
+          
+<% end %>
+<%= render 'form'%>

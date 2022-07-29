@@ -1,0 +1,23 @@
+<h1 align="center">List of Chef</h1>
+<div align="center">
+<%= will_paginate%>
+</div>
+<%@chefs.each do |chef|%>
+<div class="row">
+<div class="col-md-3">
+<section class=center>
+
+</section>
+</div>
+
+<div class="col-md-6 well" align="center"> 
+<%= link_to gravatar_for(chef), chef_path(chef) %>
+<h4><%= link_to chef.chefname, chef_path(chef) %></h4>
+    <p><%= chef.email%></p>
+    </div>
+
+
+    
+    </div>
+
+<%end%>
