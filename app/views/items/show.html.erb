@@ -1,0 +1,27 @@
+<h1 align="center"> <%= @item.name.capitalize %></h1>
+
+<div class="well col-md-8 col-md-offset-2">
+  <h4 align="center"><strong>Steps: </strong></h4>
+  <hr />
+  <%= simple_format(@item.description) %>
+  <hr />
+  <div class="pull-right">
+    <p class="center">
+      <em>Created by:</em>
+    </p>
+    <p class="center">
+      <%= link_to gravatar_for(@item.chef), items_path %>
+    </p>
+    <p class="center">
+      <small><%= @item.chef.chefname.capitalize %></small>
+      <small><%= @item.chef.email %></small>
+      <div class="pull-right"><%= time_ago_in_words(@item.created_at) %> ago</div>
+    </p>
+  </div>
+<div align="center">
+  <%= link_to "Edit this recipe", edit_item_path(@item), class: 'btn btn-xs btn-warning' %>
+</div>  
+<div>
+ <%= link_to "Delete" , items_path(@item), data: { turbo_method: :delete }%>
+</div>
+</div>

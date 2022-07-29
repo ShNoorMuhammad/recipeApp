@@ -1,0 +1,38 @@
+$navbar-default-bg: black;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+    text-align: center;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #ffff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+    
+#logo:hover {
+    color: rgb(240, 235, 231);
+    text-decoration: none;
+}  
+.description {
+    margin-top: 0;
+}
+
+.well a {
+color:blue;
+}
+
+.recipe-actions {
+    
+    padding-top: 5px;
+    a {
+      color: #fff;
+    }
+  }
+  
+  

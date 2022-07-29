@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       <%= link_to "MyRecipes", root_path, class: "navbar-brand", id: "logo" %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "Home" , root_path %></li>
+      
+      <li><%= link_to "New Recipe" , new_item_path %></li>
+     
+    </ul>
+  </div>
+</nav>
