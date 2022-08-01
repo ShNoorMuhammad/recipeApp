@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
         @items = Item.paginate(page: params[:page], per_page: 5)
     end
     def show
+        @comment = Comment.new
         @item = Item.find(params[:id])
+        @comments = @item.comments.paginate(page: params[:page], per_page: 5)
     end
 
     def new
@@ -66,7 +68,7 @@ class ItemsController < ApplicationController
 
     private
     def item_params
-        params.require(:item).permit(:name , :description)
+        params.require(:item).permit(:name , :description, ingredient_ids: [] )
 
     end
     def require_same_user

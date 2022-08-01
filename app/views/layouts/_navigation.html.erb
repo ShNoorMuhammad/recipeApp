@@ -19,6 +19,14 @@
       
       <%end%>
 
+      <li><%= link_to "All Ingredients" , ingredients_path %></li> 
+
+      <% if logged_in? && current_chef.admin%>
+
+      <li><%= link_to "New Ingredient" , new_ingredient_path %></li>      
+      
+      <%end%>
+
 
 
 

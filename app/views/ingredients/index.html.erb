@@ -1,0 +1,26 @@
+<h1 align="center">List of Ingredients</h1>
+<div align="center">
+<%= will_paginate%>
+</div>
+<%@ingredients.each do |ing|%>
+<div class="row">
+<div class="col-md-3">
+<section class=center>
+
+</section>
+</div>
+
+<div class="col-md-6 well" align="center"> 
+<h4><%= link_to ing.name, ingredient_path(ing) %></h4><br>
+    <%if logged_in? && current_chef.admin? %>
+
+ <%= link_to "Edit this ingredient" , edit_ingredient_path(ing)%>
+    <%end%>
+
+    </div>
+
+
+    
+    </div>
+
+<%end%>
