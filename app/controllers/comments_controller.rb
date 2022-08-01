@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
             
         else
             flash[:danger] = "Comment was not created"
+            
             redirect_to item_path(@item)
         end
 
