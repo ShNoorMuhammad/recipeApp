@@ -5,9 +5,22 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><%= link_to "Home" , root_path %></li>
-      
-      <li><%= link_to "New Recipe" , new_item_path %></li>
+      <li><%= link_to "All Recipes" , items_path %></li>
       <li><%= link_to "Chefs" , chefs_path %></li>
+      <% if logged_in? %>
+
+      <li><%= link_to "New Recipe" , new_item_path %></li>      
+      
+      <%end%>
+      <li><%= link_to "Login" , login_path %></li>
+      <% if logged_in? %>
+
+      <li><%= link_to "Logout" , logout_path, data:{ turbo_method: :delete ,turbo_confirm: "Are you sure?" }%></li>
+      
+      <%end%>
+
+
+
 
      
     </ul>

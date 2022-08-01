@@ -14,7 +14,8 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-        @item.chef = Chef.first
+        
+        @item.chef = current_chef
         if @item.save
             flash[:success] = "Recipe added succesfully"
             redirect_to item_path(@item)
@@ -37,23 +38,23 @@ class ItemsController < ApplicationController
             render 'edit'
 
         end
+    end
 
-        def destroy
-            @item = Item.find(params[:id])
-            @item.destroy
-            flash[:success] = "Deleted sucessfully"
-            redirect_to items_path
-            # Item.find(params[:id]).destroy
-            # flash[:success] = "Deleted sucessfully"
-            # redirect_to items_path
-
-    
-        end
-
-
+    def destroy
+        @item = Item.find(params[:id])
+        @item.destroy
+        flash[:success] = "Deleted sucessfully"
+        redirect_to items_path
+        # Item.find(params[:id]).destroy
+        # flash[:success] = "Deleted sucessfully"
+        # redirect_to items_path
 
 
     end
+
+
+
+
 
 
 

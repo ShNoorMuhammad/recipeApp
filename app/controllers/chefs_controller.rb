@@ -12,6 +12,7 @@ class ChefsController < ApplicationController
     def create
         @chef = Chef.new(chef_params)
         if @chef.save
+            session[:chef_id] = @chef.id
             flash[:success] = "Welcome #{@chef.chefname} to my recipe app"
             redirect_to chef_path(@chef)
 
@@ -40,6 +41,13 @@ class ChefsController < ApplicationController
             render 'edit'
         end
         
+    end
+
+    def destroy
+        @chef = Chef.find(params[:id])
+        @chef.destroy
+        flash[:danger] = "Chef and its recipes are deleted"
+        redirect_to chefs_path
     end
 
 
