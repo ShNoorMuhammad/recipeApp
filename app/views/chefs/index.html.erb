@@ -14,7 +14,10 @@
 <%= link_to gravatar_for(chef), chef_path(chef) %>
 <h4><%= link_to chef.chefname, chef_path(chef) %></h4>
     <p><%= chef.email%></p>
+    <%if logged_in? && current_chef.admin? %>
+
  <%= link_to "Delete" , chef_path(chef), data:{ turbo_method: :delete ,turbo_confirm: "Are you sure?" }%>
+    <%end%>
 
     </div>
 
