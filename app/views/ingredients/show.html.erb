@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: " #{@ingredient.name}" %>
+<%= render "shared/page_title", title: " #{@ingredient.name}" %>
 
 
 <% if @ingredient.items.count != 0 %>
@@ -9,10 +9,10 @@
   <%= will_paginate @ingredeint_items %>
   </div>
 
-  <%= render 'items/item' ,obj: @ingredeint_items %>
+  <%= render "items/item", obj: @ingredeint_items %>
  
-<%else %>
+<% else %>
 <h4 align="center"> No recipe found !!!!!  </h4>
-<%end%>
+<% end %>
 
 

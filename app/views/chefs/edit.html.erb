@@ -5,10 +5,10 @@
             
   <ul>
       <li>hiii errors hai</li>
-      <%@chef.errors.full_messages.each do |msg| %>
+      <% @chef.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
       <% end %>
   </ul>
           
 <% end %>
-<%= render 'form'%>
+<%= render "form" %>

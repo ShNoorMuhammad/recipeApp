@@ -1,6 +1,6 @@
 
 
-<%@items.each do |item|%>
+<% @items.each do |item| %>
 <div class="row">
 <div class="col-md-2">
 <section class=center>
@@ -10,21 +10,21 @@
 
 <div class="col-md-8 well"> 
 <h4><%= link_to item.name, item_path(item) %></h4>
-    <p><%= item.description%></p>
+    <p><%= item.description %></p>
 
 <% if item.ingredients.any? %>
 
     <p>Ingredients: <%= render item.ingredients %></p>
-<%end%>
+<% end %>
 
-<% if logged_in? && ( current_chef == item.chef || current_chef.admin?) %>
-    <%= link_to "Edit this recipe", edit_item_path(item), class: 'btn btn-xs btn-warning' %>
-     <%= link_to "Delete this recipe" , item_path(item), data: { turbo_method: :delete } , class: 'btn btn-xs btn-danger' %>
+<% if logged_in? && (current_chef == item.chef || current_chef.admin?) %>
+    <%= link_to "Edit this recipe", edit_item_path(item), class: "btn btn-xs btn-warning" %>
+     <%= link_to "Delete this recipe", item_path(item), data: { turbo_method: :delete }, class: "btn btn-xs btn-danger" %>
 
-<%end%>
+<% end %>
     </div>
 
     
     </div>
 
-<%end%>
+<% end %>

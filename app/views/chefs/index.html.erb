@@ -1,8 +1,8 @@
 <h1 align="center">List of Chef</h1>
 <div align="center">
-<%= will_paginate%>
+<%= will_paginate %>
 </div>
-<%@chefs.each do |chef|%>
+<% @chefs.each do |chef| %>
 <div class="row">
 <div class="col-md-3">
 <section class=center>
@@ -13,11 +13,11 @@
 <div class="col-md-6 well" align="center"> 
 <%= link_to gravatar_for(chef), chef_path(chef) %>
 <h4><%= link_to chef.chefname, chef_path(chef) %></h4>
-    <p><%= chef.email%></p>
-    <%if logged_in? && current_chef.admin? %>
+    <p><%= chef.email %></p>
+    <% if logged_in? && current_chef.admin? %>
 
- <%= link_to "Delete" , chef_path(chef), data:{ turbo_method: :delete ,turbo_confirm: "Are you sure?" }%>
-    <%end%>
+    <%= link_to "Delete", chef_path(chef), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <% end %>
 
     </div>
 
@@ -25,4 +25,4 @@
     
     </div>
 
-<%end%>
+<% end %>

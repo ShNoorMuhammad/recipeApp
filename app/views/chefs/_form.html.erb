@@ -2,24 +2,24 @@
             
   <ul>
       <li>hiii errors hai</li>
-      <%@chef.errors.full_messages.each do |msg| %>
+      <% @chef.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
       <% end %>
   </ul>
           
 <% end %>
-<h1><%=@chef.errors.full_messages%></h1>
+<h1><%= @chef.errors.full_messages %></h1>
 
 <div class="row">
   <div class="col-md-12">
-    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <%= form_for(@chef, :html => { class: "form-horizontal", role: "form" }) do |f| %>
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :name %>
         </div>
         <div class="col-md-8">
-          <%= f.text_field :chefname, class: "form-control", placeholder: "Name of Chef", 
-                autofocus: true %>
+          <%= f.text_field :chefname, class: "form-control", placeholder: "Name of Chef",
+                                      autofocus: true %>
         </div>
       </div>
       <div class="form-group">

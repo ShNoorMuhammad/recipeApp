@@ -4,29 +4,30 @@
        <%= link_to "MyRecipes", root_path, class: "navbar-brand", id: "logo" %>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><%= link_to "Home" , root_path %></li>
-      <li><%= link_to "All Recipes" , items_path %></li>
-      <li><%= link_to "Chefs" , chefs_path %></li>
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <li><%= link_to "All Recipes", items_path %></li>
+      <li><%= link_to "Chefs", chefs_path %></li>
       <% if logged_in? %>
 
-      <li><%= link_to "New Recipe" , new_item_path %></li>      
+      <li><%= link_to "New Recipe", new_item_path %></li>      
       
-      <%end%>
-      <li><%= link_to "Login" , login_path %></li>
+      <% end %>
+      <li><%= link_to "Login", login_path %></li>
       <% if logged_in? %>
 
-      <li><%= link_to "Logout" , logout_path, method: :delete %></li>
+      <li><%= link_to "Logout", logout_path, method: :delete %></li>
 
       
-      <%end%>
+      <% end %>
 
-      <li><%= link_to "All Ingredients" , ingredients_path %></li> 
+      <li><%= link_to "All Ingredients", ingredients_path %></li> 
 
-      <% if logged_in? && current_chef.admin%>
+      <% if logged_in? && current_chef.admin %>
 
-      <li><%= link_to "New Ingredient" , new_ingredient_path %></li>      
+      <li><%= link_to "New Ingredient", new_ingredient_path %></li>      
       
-      <%end%>
+
+      <% end %>
 
 
 
